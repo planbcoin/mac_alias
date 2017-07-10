@@ -13,7 +13,7 @@ import os
 import sys
 import pprint
 
-from urlparse import urljoin
+from urllib.parse import urljoin
 
 if sys.platform == 'darwin':
     from . import osx
@@ -292,7 +292,7 @@ class Bookmark (object):
         elif dtype == BMK_NULL:
             return None
 
-        print 'Unknown data type %08x' % typecode
+        print('Unknown data type %08x' % typecode)
         return (typecode, databytes)
 
     @classmethod

@@ -308,7 +308,11 @@ class Alias (object):
             else:
                 alias.extra.append((tag, value))
 
-            tag = struct.unpack(b'>h', b.read(2))[0]
+            try:
+                tag = struct.unpack(b'>h', b.read(2))[0]
+            except:
+                tag = -1
+                pass
             
         return alias
          
